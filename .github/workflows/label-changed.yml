@@ -18,6 +18,7 @@ jobs:
         if: github.event.action == 'labeled'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          append: true
           message: |
-            A new label has been applied
+            A new label has been applied: ${{github.event.label.name}}
 
