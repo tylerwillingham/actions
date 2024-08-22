@@ -1,0 +1,16 @@
+name: PR Automations
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  labeler:
+    name: Labeler 🏷️
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/labeler@v5
