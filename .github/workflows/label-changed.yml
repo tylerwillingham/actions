@@ -18,7 +18,16 @@ jobs:
         if: github.event.action == 'labeled'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          header: label-change-comment
           append: true
           message: |
-            A new label has been applied: ${{github.event.label.name}}
+            - A new label has been applied: ${{github.event.label.name}}
 
+      - name: "Add a comment about a label being removed"
+        if: github.event.action == 'unlabeled'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: label-change-comment
+          append: true
+          message: |
+            - The label "${{github.event.label.name}}" has been removed
