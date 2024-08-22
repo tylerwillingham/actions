@@ -1,0 +1,3 @@
+"🚧 CI only":
+  - changed-files:
+    - all-globs-to-any-file: ['.github/**/*']
